@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NarBar, Container } from "react-bootstrap";
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, seScrolled] = useState(false);
 
+    useEffect(() => {
+        if(window.scrollY > 50) {
+            seScrolled(true);
+        } else {
+            seScrolled(false);
+        }
+
+        window.addEventListener("scroll", onscroll);
+
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [])
+
     return (
-        <Navbar expand="lg">
+        <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
             <Container>
                 <Navbar.Brand href="#home">
                     <img src={''} alt="Logo" />
