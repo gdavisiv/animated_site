@@ -1,4 +1,9 @@
-/* https://youtu.be/hYv6BM2fWd8?t=955 */
+/* 
+
+https://youtu.be/hYv6BM2fWd8?t=955
+https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio
+
+*/
 
 import { useState, useEffect } from "react";
 import { NarBar, Container } from "react-bootstrap";
